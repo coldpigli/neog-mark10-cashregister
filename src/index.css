@@ -27,7 +27,8 @@ h3{
   text-align: center;
   display: block;
   font-size: 1rem;
-  color: var(--clr-accent-color);
+  color: yellow;
+  
 }
 
 p{
@@ -64,6 +65,7 @@ button{
     margin: auto;
     display: block;
     margin-top: 2rem;
+    width: 25%;
 
 }
 .container{
