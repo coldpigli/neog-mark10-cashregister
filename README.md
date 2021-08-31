@@ -1,1 +1,1 @@
-Hi
+CashRegister is a project done in an attempt to complete Mark15 which is the bare minimum criteria to get into NeoGcamp. Cash Register is a simple web app that returns the number of denominations to be given back to a customer inorder to return his change after the bill. 
