@@ -7,6 +7,7 @@ function App() {
   const[billAmount, setBillAmount] = useState();
   const[amountPaid, setAmountPaid] = useState();
   const[alertMessage, setAlertMessage] = useState("");
+  const[showAmount, setShowAmount] = useState(false);
   const availableDenominations = [2000, 500, 100, 20, 10, 5, 1];
   let numberArray = [0,0,0,0,0,0,0];
   const [ValueInTable,setValueInTable] = useState(numberArray);
@@ -16,6 +17,7 @@ function App() {
   const valdatingInputs = () => {
       if(billAmount>0){
         //calculate change
+        
         if(amountPaid<billAmount){
           setAlertMessage("You seem to short on money. Wanna do the dishes?")
         }
@@ -45,13 +47,21 @@ function App() {
     <p>Cash Register is a simple web app that tells you what denominations to return as change</p>
 
     <label htmlFor="billAmount">Enter the bill amount</label>
-    <input id = "billAmount" type = "number"  onChange = {(e)=>{setBillAmount(e.target.value)}}></input>
+    <input id = "billAmount" type = "number"  onChange = {(e)=>{setBillAmount(e.target.value);
+    setShowAmount(true);
+    }}></input>
 
-    <label htmlFor="amountPaid">Enter the amount paid</label>
+  {
+    showAmount && <><label htmlFor="amountPaid">Enter the amount paid</label>
     <input id = "amountPaid" type = "number"  onChange = {(e)=>{setAmountPaid(e.target.value)}}></input>
-
     <button onClick = {valdatingInputs}>Calculate</button>
     <h3>{alertMessage}</h3>
+    </>
+  }
+
+    
+
+    
 
 
     <table className="change-table">
