@@ -22,7 +22,7 @@ function App() {
           setAlertMessage("You seem to short on money. Wanna do the dishes?")
         }
         else{
-          setAlertMessage("");
+          setAlertMessage("The amount to be returned is " + (amountPaid-billAmount));
           calculateDenomination(amountPaid-billAmount);
         }
       }
